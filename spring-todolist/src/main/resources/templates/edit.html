@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ToDoUpdate</title>
+</head>
+<body>
+	<form action="/top/update" method="post">	
+		
+		To Do<textarea name="todo" th:value="${todo.todo}"></textarea><br>
+		優先度<input type="text" name="priority" th:value="${todo.priority}"><br>
+		期限<input type="text" name="deadline" th:value="${todo.deadline}"><br>
+		//hiddenの1行を書く意味とは？
+		<input type="hidden" name="code" th:value="${todo.code}">
+		<input type="submit" value="更新">
+	
+	</form>
+
+
+</body>
+</html>

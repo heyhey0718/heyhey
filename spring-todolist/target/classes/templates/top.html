@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Top</title>
+</head>
+<body>
+
+<!-- 表を生成 -->
+<table border="1">
+<tr>
+	<th>番号</th><th>やること</th><th>優先度</th><th>期限</th><th>完了</th><th>更新</th>
+</tr>
+<tr th:each="todo:${todolist}">
+	<td th:text="${todo.code}"></td>
+	<td th:text="${todo.todo}"></td>
+	<td th:text="${todo.priority}"></td>
+	<td th:text="${todo.deadline}"></td>
+	
+	<td>
+		<!-- 更新機能の実装 -->
+		<form th:action="@{'/top/'+${todo.code}+'/edit'}" method="get">
+		<input type="submit" value="更新">
+		</form>
+	</td>
+	
+	<td>
+		<form>
+		<input type="submit" value="削除">
+		</form>
+	
+	</td>
+</tr>
+</table>
+
+<!-- リンク取得 -->
+<a href="/top/new">登録ページ</a> 
+
+</body>
+</html>
