@@ -25,17 +25,13 @@
 	</td>
 	
 	<td>
-		<!-- 削除機能の実装 -->
-		<form action="/top/delete" method="post">
-		<input type="hidden" name="code" th:value="${todo.code}">
+		<form>
 		<input type="submit" value="削除">
 		</form>
+	
 	</td>
 </tr>
 </table>
-
-<!-- ねぎらい -->
-
 
 <!-- リンク取得 -->
 <a href="/top/new">登録ページ</a> 

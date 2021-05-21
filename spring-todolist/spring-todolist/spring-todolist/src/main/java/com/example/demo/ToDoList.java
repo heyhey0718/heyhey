@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="todolist")
-public class ToDoList 
+public class ToDoList
 {
 
 	@Id

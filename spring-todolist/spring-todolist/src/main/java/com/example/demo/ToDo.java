@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="todolist")
-public class ToDoList 
+public class ToDo 
 {
 
 	@Id
@@ -26,18 +26,18 @@ public class ToDoList
 	@Column(name="deadline")
 	private String deadline;
 
-	public ToDoList() 
+	public ToDo() 
 	{
 		super();
 	}
 
-	public ToDoList(Integer code, String todo, String priority, String deadline) 
+	public ToDo(Integer code, String todo, String priority, String deadline) 
 	{
 		this(todo, priority, deadline);
 		this.code = code;
 	}
 
-	public ToDoList(String todo, String priority, String deadline) 
+	public ToDo(String todo, String priority, String deadline) 
 	{
 		super();
 		this.todo = todo;
