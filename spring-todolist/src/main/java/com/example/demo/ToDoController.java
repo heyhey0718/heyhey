@@ -123,11 +123,9 @@ public class ToDoController
 				) 
 		{
 			//ここでcongの値を表示指せる処理をしたい
-	        Congratulations cong = new Congratulations();
-	        String[] array = {};
-	        String str = cong.congratulations(array);
+			String ret = congratulations.congratulations();
 	        // mvにビューと返却する値をセット
-	        mv.addObject("str", cong);
+	        mv.addObject("str", ret);
 			mv.setViewName("redirect:/top");
 			return mv;
 		}
