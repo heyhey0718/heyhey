@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class Congratulations 
 {
-	public String congratulations()
+	public String congratulations(String[] args)
 	{
 	String[] congs = {"おめでとう！", "お疲れさま！", "その調子"};
 	Random r = new Random();

@@ -101,23 +101,36 @@ public class ToDoController
 	
 	//タスク６トップ画面にねぎらいのメッセージを追加
 	@RequestMapping(value="/top/delete", method = RequestMethod.POST)
-	public String toDoDelete(
-			@RequestParam("code") String code
-			) 
-	{
-		
-		//1レコード削除
+	
+		/*1レコード削除
 		todoRepository.deleteById(Integer.parseInt(code));
 		
 		//ここでcongの値を表示できる処理をしたい
-		/*Congratulations cong = new Congratulations();
-		cong.congratulations(String[]);→失敗*/
+		Congratulations cong = new Congratulations();
+		cong.congratulations(String[]);→失敗
 		
 		//クラスのデータ型　変数名　＝　congratulations.congratulations();
 		String ret = congratulations.congratulations();
 		
 		
-		return "redirect:/top";
+		return "redirect:/top";*/
+	
+	 // Delete関数の返却する型を変更する
+		public ModelAndView toDoDelete(
+				@RequestParam("code") String code,
+	            // 引数にmvを追加
+	            ModelAndView mv
+				) 
+		{
+			//ここでcongの値を表示指せる処理をしたい
+	        Congratulations cong = new Congratulations();
+	        String[] array = {};
+	        String str = cong.congratulations(array);
+	        // mvにビューと返却する値をセット
+	        mv.addObject("str", cong);
+			mv.setViewName("redirect:/top");
+			return mv;
+		}
 		
 	}
-}
+
